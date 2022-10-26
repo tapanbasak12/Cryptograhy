@@ -5,18 +5,22 @@
 
 using namespace std;
 
-int main()
+int powerSqAndMul(int u, int m, int p)
 {
-   int A=1,b,u=5,p=29,m=24;
+   int A=1,b;
    while(m>0)
    {
-        cout<<u<<" ";
         b=m%2;
         if(b==1)
         A=(A*u)%p;
         m=(m-b)/2;
         u=(u*u)%p;
-        cout<<A<<endl;
-   }
-   cout<<A;
+    }
+    
+    return A; 
+}
+
+int main()
+{
+  cout << powerSqAndMul(3, 118, 23);
 }
