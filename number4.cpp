@@ -158,7 +158,11 @@ int main()
     X = powerSqAndMul(G, R, P);
     R_inverse= modInverse(R, P-1);
     Y = powerSqAndMul( (M - r*X)*R_inverse, 1, P-1); 
-    
+    while(Y<0)
+    {
+	Y+= P-1; 
+    }
+	
     
     // Receiver Computes
     A = powerSqAndMul ( (powerSqAndMul(K, X, P) * powerSqAndMul(X, Y, P) ), 1, P); // A=(K^X)(X^Y) % P;
@@ -167,8 +171,10 @@ int main()
     
     A_expected = powerSqAndMul(G, M, P);
     
-    cout << "Expected A: " << A <<endl ; 
-    
+    cout << "Expected A: " << A_expected <<endl ; 
+
+    if( A== A_expected) cout << "AUTHENTICATED" <<endl; 
+    else cout << "Not Verified" ;
      
     return 0;
 }
