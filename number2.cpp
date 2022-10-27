@@ -261,6 +261,12 @@ int main()
         cout << elgamal_decrypted_array[i] << " ";
     }
     
+    cout << "\nDecoded String:" <<endl; 
+     
+    for (long long int i=0 ; i < elgamal_decrypted_array.size(); i++)
+    {
+        decode(elgamal_decrypted_array[i]);
+    }
     
     
     cout <<endl;
