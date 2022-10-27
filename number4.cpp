@@ -169,7 +169,6 @@ int main()
     
     cout << "Expected A: " << A <<endl ; 
     
-    if( A== A_expected) cout << "Verified Signature: AUTHENTICATED" <<endl;  
      
     return 0;
 }
