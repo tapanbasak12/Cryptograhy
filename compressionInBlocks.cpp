@@ -88,20 +88,17 @@ void decode(int N)
            }
        }
        
-       
        for(int i=vec.size()-1; i>=0; i--)
        {
            cout << char(vec[i]+'A');
        }
-       
-       cout<<endl; 
 }
 
 int main()
 {
     string str = getString();
     int blockSize = getBlockSize();
-    char paddingChar = 'X';
+    char paddingChar = 'x';
 
     str.erase(remove(str.begin(), str.end(), ' '), str.end());
     str = addPadding(str, blockSize, paddingChar);
@@ -115,16 +112,16 @@ int main()
     {
         cout << encoded_array[i] << " "; 
     }
-   
+    
+    cout <<endl;
+    
     vector<string> decoded_str; 
     for (int i=0 ; i < encoded_array.size(); i++)
     {
-         decoded_str.push_back ( decode(encoded_array[i]) );
+        decode(encoded_array[i]);
+        
     }
     
-    
-    
-    
-    
+   
     return 0;
 }
